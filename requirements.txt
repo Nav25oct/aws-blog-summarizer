@@ -1,0 +1,7 @@
+requests
+beautifulsoup4
+playwright
+langchain
+fastapi
+streamlit
+ollama
