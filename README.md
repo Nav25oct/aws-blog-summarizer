@@ -68,6 +68,9 @@ git add .
 git commit -m "Initial commit"  
 git push origin main  
 ```
+## 📌 Notes
+- If you're looking to install open-source LLMs on your Mac, check out this video:  
+  [📺 How to Install Open Source LLMs on Mac](https://www.youtube.com/watch?v=RDvQmE9eNRw&ab_channel=CloudandCoffeewithNavnit)
 
 ## 🎯 Usage  
 1⃣ **Run the app** and open in a browser  
