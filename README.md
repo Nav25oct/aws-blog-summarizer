@@ -1,75 +1,83 @@
-# 🚀 AWS Blog Summarizer
+# 📝 AWS Blog Summarizer - Agentic GenAI Based Summarization  
 
-## Overview
-AWS Blog Summarizer is a Streamlit-based web application that scrapes AWS Big Data blogs, fetches their content, and generates concise summaries using the DeepSeek LLM model.
+## 📌 Overview  
+The **AWS Blog Summarizer** is an **Agentic GenAI**-based application that **automates text summarization** of AWS blogs (or any other text content). It fetches blog posts, extracts relevant content, and generates **concise, structured summaries** using a **Large Language Model (LLM)**.   
 
-## Features
-- ✅ Fetches the latest AWS Big Data blog posts
-- ✅ Extracts and summarizes blog content using DeepSeek LLM
-- ✅ Displays key takeaways in a structured bullet-point format
-- ✅ Simple UI powered by Streamlit
+### ✨ Key Features:  
+- 🔍 **Scrapes blog posts** from AWS Big Data Blog (or any blog URL)  
+- 🤖 **Summarizes text** using DeepSeek LLM via API  
+- 🎯 **Extracts key insights**, including main topic, challenges, solutions, tools, and best practices  
+- 🖥️ **Interactive UI** built with Streamlit  
 
-## 🛠️ Installation & Setup
+## 🏰 Architecture  
+🔹 **User Input:** Selects or enters a blog URL in the Streamlit UI  
+🔹 **Scraper Module:** Fetches the blog content  
+🔹 **Summarization Module:** Sends the extracted content to DeepSeek LLM via API  
+🔹 **AI Processing:** Generates structured summaries  
+🔹 **Output:** Displays the summarized content in an easy-to-read format  
 
-### 1. Clone the Repository
+### 📉 High-Level Flow:  
+```mermaid
+graph TD;
+    A[User Input] -->|Fetch Blog| B[Scraper Module];
+    B -->|Extract Content| C[Summarization Module];
+    C -->|Send to LLM| D[DeepSeek API];
+    D -->|Generate Summary| E[Display in UI];
+```
+
+## 📂 Project Structure  
+```
+aws-blog-summarizer/
+│── app/
+│   ├── scraper.py  # Fetches blog content
+│   ├── summarizer.py  # Calls DeepSeek API for summarization
+│   ├── ui.py  # Streamlit UI to display results
+│── .venv/  # Virtual environment
+│── requirements.txt  # Required dependencies
+│── README.md  # Project documentation
+```
+
+## 🚀 Setup & Installation  
+
+### 1⃣ Clone the Repository  
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/aws-blog-summarizer.git
+git clone https://github.com/your-username/aws-blog-summarizer.git
 cd aws-blog-summarizer
 ```
 
-### 2. Create a Virtual Environment
+### 2⃣ Create a Virtual Environment & Install Dependencies  
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate  # For macOS/Linux
-# or
-.venv\Scripts\activate     # For Windows
+python3 -m venv .venv  
+source .venv/bin/activate  # On Mac/Linux
+# On Windows: .venv\Scripts\activate  
+
+pip install -r requirements.txt  
 ```
 
-### 3. Install Dependencies
+### 3⃣ Run the Streamlit App  
 ```bash
-pip install -r requirements.txt
+streamlit run app/ui.py  
 ```
 
-### 4. Start Ollama (for DeepSeek Model)
-Ensure you have [Ollama](https://ollama.ai/) installed and running. Then, run the following command to load the **DeepSeek** model:
+### 4⃣ Deploy to GitHub  
+If you haven't set up GitHub:  
 ```bash
-ollama run deepseek-r1:1.5b
+git init  
+git remote add origin https://github.com/your-username/aws-blog-summarizer.git  
+git add .  
+git commit -m "Initial commit"  
+git push origin main  
 ```
 
-## 🚀 Running the Application
-```bash
-streamlit run app/ui.py
-```
-This will start a local Streamlit server, and you can access the app in your browser.
+## 🎯 Usage  
+1⃣ **Run the app** and open in a browser  
+2⃣ **Select an AWS blog** (or enter any blog URL)  
+3⃣ **Click "Summarize"** to generate a structured summary  
 
-## 🌍 Deploying on GitHub
+## 📌 Future Enhancements  
+✅ **Support for more data sources**  
+✅ **Multi-language summarization**  
+✅ **Enhancing AI responses with metadata**  
 
-### 1. Initialize Git
-```bash
-git init
-git remote add origin https://github.com/YOUR_GITHUB_USERNAME/aws-blog-summarizer.git
-git branch -M main
-```
-
-### 2. Add & Commit Changes
-```bash
-git add .
-git commit -m "Initial commit"
-```
-
-### 3. Push to GitHub
-```bash
-git push origin main
-```
-
-## 🛠 Troubleshooting
-- If `git push` fails, use:
-  ```bash
-  git remote set-url origin https://github.com/YOUR_GITHUB_USERNAME/aws-blog-summarizer.git
-  git push origin main --force
-  ```
-- If you face permission issues, use a **GitHub Personal Access Token (PAT)** instead of your password.
-
-## 📜 License
-This project is open-source under the **MIT License**. Feel free to modify and contribute!
+💡 **Open for contributions! Feel free to fork & submit PRs.** 🚀  
 
