@@ -51,8 +51,11 @@ python3 -m venv .venv
 source .venv/bin/activate  # On Mac/Linux
 # On Windows: .venv\Scripts\activate  
 
-pip install -r requirements.txt  
+pip install -r requirements.txt
+playwright install 
 ```
+
+
 
 ### 3⃣ Run the Streamlit App  
 ```bash
